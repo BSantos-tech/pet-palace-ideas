@@ -7,6 +7,7 @@ import PetIcon from '@/components/ui/PetIcon';
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [swappedIcons, setSwappedIcons] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,10 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLogoClick = () => {
+    setSwappedIcons(!swappedIcons);
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -24,13 +29,13 @@ const Navbar: React.FC = () => {
     >
       <div className="container px-4 mx-auto flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <a href="#" className="flex items-center gap-2" onClick={handleLogoClick}>
           <div className="relative">
-            <div className="w-10 h-10 bg-vet-blue rounded-full flex items-center justify-center">
-              <PetIcon type="cat" className="text-white animate-paw-wave" />
+            <div className={`w-10 h-10 bg-${swappedIcons ? 'vet-green' : 'vet-blue'} rounded-full flex items-center justify-center transition-all duration-300 ${swappedIcons ? 'z-10' : 'z-20'}`}>
+              <PetIcon type={swappedIcons ? "dog" : "cat"} className="text-white animate-paw-wave" />
             </div>
-            <div className="w-10 h-10 bg-vet-green rounded-full flex items-center justify-center absolute -right-4 -bottom-2">
-              <PetIcon type="dog" className="text-white" />
+            <div className={`w-10 h-10 bg-${swappedIcons ? 'vet-blue' : 'vet-green'} rounded-full flex items-center justify-center absolute -right-4 -bottom-2 transition-all duration-300 ${swappedIcons ? 'z-20' : 'z-10'}`}>
+              <PetIcon type={swappedIcons ? "cat" : "dog"} className="text-white" />
             </div>
           </div>
           <div className="ml-4">
