@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
           <div className="ml-4">
-            <h1 className="font-display font-bold text-xl text-vet-blue-dark">Animal's Life</h1>
+            <h1 className="font-display font-bold text-xl text-vet-blue-dark">Animal's Life <span className="text-xs font-normal text-vet-blue-dark">© BlueCorp</span></h1>
             <p className="text-xs text-vet-green-dark -mt-1">Clínica Veterinária</p>
           </div>
         </a>
