@@ -31,10 +31,16 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2" onClick={handleLogoClick}>
           <div className="relative">
-            <div className={`w-10 h-10 bg-${swappedIcons ? 'vet-green' : 'vet-blue'} rounded-full flex items-center justify-center transition-all duration-300 ${swappedIcons ? 'z-10' : 'z-20'}`}>
+            <div 
+              className={`w-10 h-10 bg-${swappedIcons ? 'vet-green' : 'vet-blue'} rounded-full flex items-center justify-center 
+                transition-all duration-300 ${swappedIcons ? 'z-10 scale-90' : 'z-20 scale-100'}`}
+            >
               <PetIcon type={swappedIcons ? "dog" : "cat"} className="text-white animate-paw-wave" />
             </div>
-            <div className={`w-10 h-10 bg-${swappedIcons ? 'vet-blue' : 'vet-green'} rounded-full flex items-center justify-center absolute -right-4 -bottom-2 transition-all duration-300 ${swappedIcons ? 'z-20' : 'z-10'}`}>
+            <div 
+              className={`w-10 h-10 bg-${swappedIcons ? 'vet-blue' : 'vet-green'} rounded-full flex items-center justify-center 
+                absolute -right-4 -bottom-2 transition-all duration-300 ${swappedIcons ? 'z-20 scale-110' : 'z-10 scale-100'}`}
+            >
               <PetIcon type={swappedIcons ? "cat" : "dog"} className="text-white" />
             </div>
           </div>
