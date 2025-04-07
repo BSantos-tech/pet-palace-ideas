@@ -14,7 +14,7 @@ const Index = () => {
   
   React.useEffect(() => {
     toast({
-      title: "Bem-vindo à PetCare",
+      title: "Bem-vindo à Animal's Life",
       description: "Navegue pelo nosso site e conheça nossos serviços veterinários.",
       duration: 5000,
     });

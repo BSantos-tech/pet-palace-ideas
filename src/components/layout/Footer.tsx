@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
               <div className="ml-2">
-                <h3 className="font-display font-bold text-lg text-white">PetCare</h3>
+                <h3 className="font-display font-bold text-lg text-white">Animal's Life</h3>
                 <p className="text-xs text-vet-green -mt-1">Clínica Veterinária</p>
               </div>
             </div>
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={18} />
-                <span className="text-gray-300">contato@petcare.com.br</span>
+                <span className="text-gray-300">contato@animalslife.com.br</span>
               </li>
               <li className="flex items-start gap-2">
                 <Clock className="mt-1 flex-shrink-0" size={18} />
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
       <div className="border-t border-gray-700 py-6">
         <div className="vet-container">
           <p className="text-center text-sm text-gray-400">
-            © 2025 PetCare Clínica Veterinária. Todos os direitos reservados.
+            © 2025 Animal's Life Clínica Veterinária. Todos os direitos reservados.
           </p>
         </div>
       </div>
