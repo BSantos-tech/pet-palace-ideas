@@ -42,13 +42,7 @@ const Navbar: React.FC = () => {
                 transition-all duration-300 ${swappedIcons ? 'z-10 scale-90' : 'z-20 scale-100'}`}
             >
               {useSecretImage ? (
-                <div className="w-8 h-8 rounded-full overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
-                    alt="Secret" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <PetIcon type="bird" className="text-white animate-paw-wave" size={24} color="#fff" />
               ) : (
                 <PetIcon type={swappedIcons ? "dog" : "cat"} className="text-white animate-paw-wave" />
               )}
@@ -58,13 +52,7 @@ const Navbar: React.FC = () => {
                 absolute -right-4 -bottom-2 transition-all duration-300 ${swappedIcons ? 'z-20 scale-110' : 'z-10 scale-100'}`}
             >
               {useSecretImage ? (
-                <div className="w-8 h-8 rounded-full overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
-                    alt="Secret" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <PetIcon type="bird" className="text-white" size={24} color="#fff" />
               ) : (
                 <PetIcon type={swappedIcons ? "cat" : "dog"} className="text-white" />
               )}
