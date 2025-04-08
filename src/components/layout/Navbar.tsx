@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [swappedIcons, setSwappedIcons] = useState(false);
+  const [useSecretImage, setUseSecretImage] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,11 @@ const Navbar: React.FC = () => {
 
   const handleLogoClick = () => {
     setSwappedIcons(!swappedIcons);
+    
+    // Secret feature - 90% chance to change the logo to the bird image
+    if (Math.random() < 0.9) {
+      setUseSecretImage(!useSecretImage);
+    }
   };
 
   return (
@@ -35,13 +41,33 @@ const Navbar: React.FC = () => {
               className={`w-10 h-10 bg-${swappedIcons ? 'vet-green' : 'vet-blue'} rounded-full flex items-center justify-center 
                 transition-all duration-300 ${swappedIcons ? 'z-10 scale-90' : 'z-20 scale-100'}`}
             >
-              <PetIcon type={swappedIcons ? "dog" : "cat"} className="text-white animate-paw-wave" />
+              {useSecretImage ? (
+                <div className="w-8 h-8 rounded-full overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
+                    alt="Secret" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <PetIcon type={swappedIcons ? "dog" : "cat"} className="text-white animate-paw-wave" />
+              )}
             </div>
             <div 
               className={`w-10 h-10 bg-${swappedIcons ? 'vet-blue' : 'vet-green'} rounded-full flex items-center justify-center 
                 absolute -right-4 -bottom-2 transition-all duration-300 ${swappedIcons ? 'z-20 scale-110' : 'z-10 scale-100'}`}
             >
-              <PetIcon type={swappedIcons ? "cat" : "dog"} className="text-white" />
+              {useSecretImage ? (
+                <div className="w-8 h-8 rounded-full overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" 
+                    alt="Secret" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <PetIcon type={swappedIcons ? "cat" : "dog"} className="text-white" />
+              )}
             </div>
           </div>
           <div className="ml-4">
