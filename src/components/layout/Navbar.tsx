@@ -21,8 +21,8 @@ const Navbar: React.FC = () => {
   const handleLogoClick = () => {
     setSwappedIcons(!swappedIcons);
     
-    // Secret feature - 90% chance to change the logo to the bird image
-    if (Math.random() < 0.9) {
+    // Secret feature - 50% chance to change the logo to the bird image
+    if (Math.random() < 0.5) {
       setUseSecretImage(!useSecretImage);
     }
   };
