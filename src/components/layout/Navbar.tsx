@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
               className={`w-10 h-10 bg-${swappedIcons ? 'vet-green' : 'vet-blue'} rounded-full flex items-center justify-center 
                 transition-all duration-300 ${swappedIcons ? 'z-10 scale-90' : 'z-20 scale-100'}`}
             >
-              {useSecretImage ? (
+              {useSecretImage && swappedIcons ? (
                 <PetIcon type="bird" className="text-white animate-paw-wave" size={24} color="#fff" />
               ) : (
                 <PetIcon type={swappedIcons ? "dog" : "cat"} className="text-white animate-paw-wave" />
@@ -51,11 +51,7 @@ const Navbar: React.FC = () => {
               className={`w-10 h-10 bg-${swappedIcons ? 'vet-blue' : 'vet-green'} rounded-full flex items-center justify-center 
                 absolute -right-4 -bottom-2 transition-all duration-300 ${swappedIcons ? 'z-20 scale-110' : 'z-10 scale-100'}`}
             >
-              {useSecretImage ? (
-                <PetIcon type="bird" className="text-white" size={24} color="#fff" />
-              ) : (
-                <PetIcon type={swappedIcons ? "cat" : "dog"} className="text-white" />
-              )}
+              <PetIcon type={swappedIcons ? "cat" : "dog"} className="text-white" />
             </div>
           </div>
           <div className="ml-4">
