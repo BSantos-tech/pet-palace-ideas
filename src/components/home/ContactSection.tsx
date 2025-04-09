@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -27,8 +26,7 @@ const ContactSection: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-lg mb-1">Endereço</h4>
                   <p className="text-muted-foreground">
-                    Av. Paulista, 1000 - Bela Vista
-                    <br />São Paulo - SP, 01310-100
+                    Araçatuba, Senac
                   </p>
                 </div>
               </div>
@@ -70,7 +68,7 @@ const ContactSection: React.FC = () => {
 
             <div className="rounded-xl overflow-hidden h-64 shadow-md">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976701966634!2d-46.65567388440374!3d-23.563200367552036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1649088389050!5m2!1spt-BR!2sbr" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.7177767396473!2d-50.43267602356171!3d-21.20734538051714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9495f5ef339c48dd%3A0x9a5cd268ad4d08db!2sSenac%20Ara%C3%A7atuba!5e0!3m2!1spt-BR!2sbr!4v1713962633818!5m2!1spt-BR!2sbr" 
                 className="w-full h-full border-0"
                 allowFullScreen
                 loading="lazy"
