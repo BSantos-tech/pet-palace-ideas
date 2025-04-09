@@ -21,8 +21,8 @@ const Navbar: React.FC = () => {
   const handleLogoClick = () => {
     setSwappedIcons(!swappedIcons);
     
-    // Secret feature - 50% chance to change the logo to the bird image
-    if (Math.random() < 0.5) {
+    // Secret feature - 10% chance to change the logo to the bird image
+    if (Math.random() < 0.1) {
       setUseSecretImage(!useSecretImage);
     }
   };
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
                 absolute -right-4 -bottom-2 transition-all duration-300 ${swappedIcons ? 'z-20 scale-110' : 'z-10 scale-100'}`}
             >
               {useSecretImage ? (
-                <PetIcon type="bird" className="text-white" size={24} color="#FF9D5C" />
+                <PetIcon type="bird" className="text-white" size={24} color="#FFFFFF" />
               ) : (
                 <PetIcon type={swappedIcons ? "cat" : "dog"} className="text-white" />
               )}
