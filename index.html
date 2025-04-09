@@ -16,12 +16,538 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@animalslife" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap">
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="toast-container" class="toast-container"></div>
+    
+    <!-- Header/Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-logo">
+          <div class="logo-container">
+            <div class="logo-pet logo-cat">
+              <img src="assets/cat.svg" alt="Cat icon" />
+            </div>
+            <div class="logo-pet logo-dog">
+              <img src="assets/dog.svg" alt="Dog icon" />
+            </div>
+          </div>
+          <div class="logo-text">
+            <h1>Animal's Life</h1>
+            <p>Clínica Veterinária</p>
+          </div>
+        </div>
+        <nav class="navbar-menu">
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+    
+    <main>
+      <!-- Hero Section -->
+      <section id="inicio" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>Cuidados Veterinários com <span class="text-green">Amor</span> e <span class="text-orange">Carinho</span></h1>
+              <p>Nossa clínica veterinária oferece atendimento completo e especializado para garantir a saúde e o bem-estar do seu melhor amigo.</p>
+              <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="handleAction('schedule')">
+                  <img src="assets/calendar.svg" alt="Calendar icon" />
+                  Agendar Consulta
+                  <img src="assets/arrow-right.svg" alt="Arrow right icon" />
+                </button>
+                <button class="btn btn-outline" onclick="handleAction('emergency')">
+                  <img src="assets/phone.svg" alt="Phone icon" />
+                  Emergência 24h
+                </button>
+              </div>
+              <div class="hero-features">
+                <div class="feature">
+                  <div class="feature-icon blue">
+                    <img src="assets/cat.svg" alt="Cat icon" />
+                  </div>
+                  <h3>Consultas</h3>
+                </div>
+                <div class="feature">
+                  <div class="feature-icon green">
+                    <img src="assets/dog.svg" alt="Dog icon" />
+                  </div>
+                  <h3>Vacinas</h3>
+                </div>
+                <div class="feature">
+                  <div class="feature-icon orange">
+                    <img src="assets/bird.svg" alt="Bird icon" />
+                  </div>
+                  <h3>Exames</h3>
+                </div>
+              </div>
+            </div>
+            <div class="hero-image">
+              <img src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" alt="Veterinário cuidando de gato" class="main-image" />
+              <div class="floating-image">
+                <img src="https://images.unsplash.com/photo-1452378174528-3090a4bba7b2" alt="Cachorro feliz" />
+              </div>
+              <div class="bg-shape"></div>
+              <div class="floating-shape blue"></div>
+              <div class="floating-shape orange"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Services Section -->
+      <section id="servicos" class="services">
+        <div class="container">
+          <h2 class="section-title">Nossos Serviços</h2>
+          <p class="section-subtitle">Oferecemos uma ampla gama de serviços veterinários para cuidar da saúde e do bem-estar do seu pet.</p>
+          
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon blue">
+                <img src="assets/stethoscope.svg" alt="Consultas" />
+              </div>
+              <h3>Consultas</h3>
+              <p>Consultas de rotina, preventivas e para problemas específicos com nossos veterinários especialistas.</p>
+              <a href="#" class="link-more">Saiba mais <img src="assets/arrow-right.svg" alt="Arrow right" /></a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon green">
+                <img src="assets/syringe.svg" alt="Vacinação" />
+              </div>
+              <h3>Vacinação</h3>
+              <p>Programa completo de vacinação para cães, gatos e outros animais de estimação.</p>
+              <a href="#" class="link-more">Saiba mais <img src="assets/arrow-right.svg" alt="Arrow right" /></a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon orange">
+                <img src="assets/microscope.svg" alt="Exames" />
+              </div>
+              <h3>Exames Laboratoriais</h3>
+              <p>Exames de sangue, urina e outros diagnósticos com resultados rápidos e precisos.</p>
+              <a href="#" class="link-more">Saiba mais <img src="assets/arrow-right.svg" alt="Arrow right" /></a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon blue">
+                <img src="assets/scissors.svg" alt="Banho e Tosa" />
+              </div>
+              <h3>Banho e Tosa</h3>
+              <p>Serviços de banho, tosa e estética para manter seu pet limpo e saudável.</p>
+              <a href="#" class="link-more">Saiba mais <img src="assets/arrow-right.svg" alt="Arrow right" /></a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon green">
+                <img src="assets/heart.svg" alt="Cirurgias" />
+              </div>
+              <h3>Cirurgias</h3>
+              <p>Procedimentos cirúrgicos realizados por equipe especializada em ambiente seguro.</p>
+              <a href="#" class="link-more">Saiba mais <img src="assets/arrow-right.svg" alt="Arrow right" /></a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon orange">
+                <img src="assets/shopping-bag.svg" alt="Pet Shop" />
+              </div>
+              <h3>Pet Shop</h3>
+              <p>Alimentação, medicamentos, acessórios e tudo que seu pet precisa em um só lugar.</p>
+              <a href="#" class="link-more">Saiba mais <img src="assets/arrow-right.svg" alt="Arrow right" /></a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon blue">
+                <img src="assets/clock.svg" alt="Emergência" />
+              </div>
+              <h3>Emergência 24h</h3>
+              <p>Atendimento emergencial disponível 24 horas por dia, todos os dias da semana.</p>
+              <a href="#" class="link-more" onclick="handleAction('emergency')">Saiba mais <img src="assets/arrow-right.svg" alt="Arrow right" /></a>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-icon green">
+                <img src="assets/activity.svg" alt="Especialidades" />
+              </div>
+              <h3>Especialidades</h3>
+              <p>Cardiologia, dermatologia, odontologia, ortopedia e outras especialidades veterinárias.</p>
+              <a href="#" class="link-more">Saiba mais <img src="assets/arrow-right.svg" alt="Arrow right" /></a>
+            </div>
+          </div>
+          
+          <div class="services-more">
+            <button class="btn btn-primary">Ver todos os serviços</button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- About Section -->
+      <section id="sobre" class="about">
+        <div class="container">
+          <h2 class="section-title">Sobre a Animal's Life</h2>
+          <p class="section-subtitle">Conheça nossa história e equipe de profissionais dedicados ao bem-estar animal.</p>
+          
+          <div class="about-content">
+            <div class="about-image">
+              <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e" alt="Equipe da Animal's Life" />
+              <div class="about-badge">
+                <div class="badge-years">15</div>
+                <div class="badge-text">Anos de Experiência</div>
+              </div>
+            </div>
+            <div class="about-text">
+              <h3>A Clínica que seu Pet Merece</h3>
+              <p>Fundada em 2010 por um grupo de veterinários apaixonados por animais, a Animal's Life nasceu com a missão de proporcionar cuidados de excelência para pets de todas as espécies.</p>
+              <p>Nossa equipe é formada por profissionais altamente qualificados e em constante atualização para oferecer os melhores tratamentos e procedimentos veterinários.</p>
+              
+              <div class="about-stats">
+                <div class="stat">
+                  <div class="stat-number">12K+</div>
+                  <div class="stat-text">Pets Atendidos</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number">32+</div>
+                  <div class="stat-text">Especialistas</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-text">Satisfação</div>
+                </div>
+              </div>
+              
+              <div class="about-values">
+                <div class="value">
+                  <img src="assets/check-circle.svg" alt="Check" />
+                  <div>Atendimento Humanizado</div>
+                </div>
+                <div class="value">
+                  <img src="assets/check-circle.svg" alt="Check" />
+                  <div>Equipamentos Modernos</div>
+                </div>
+                <div class="value">
+                  <img src="assets/check-circle.svg" alt="Check" />
+                  <div>Instalações Confortáveis</div>
+                </div>
+                <div class="value">
+                  <img src="assets/check-circle.svg" alt="Check" />
+                  <div>Profissionais Qualificados</div>
+                </div>
+              </div>
+              
+              <button class="btn btn-primary" onclick="handleAction('schedule')">Agende uma Visita</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Testimonials Section -->
+      <section id="depoimentos" class="testimonials">
+        <div class="container">
+          <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+          <p class="section-subtitle">A satisfação dos nossos clientes e o bem-estar dos seus pets são nossa prioridade.</p>
+          
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <img src="assets/quote.svg" alt="Quote" />
+              </div>
+              <div class="testimonial-content">
+                <div class="testimonial-client">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Silva" />
+                  <div>
+                    <h4>Ana Silva</h4>
+                    <div class="pet-info">
+                      <span>e Luna</span>
+                      <img src="assets/cat.svg" alt="Cat" />
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                </div>
+                <p>Minha gatinha Luna recebeu um atendimento excepcional na PetCare. Os veterinários são muito atenciosos e cuidadosos. Recomendo a todos que amam seus pets!</p>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <img src="assets/quote.svg" alt="Quote" />
+              </div>
+              <div class="testimonial-content">
+                <div class="testimonial-client">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Oliveira" />
+                  <div>
+                    <h4>Carlos Oliveira</h4>
+                    <div class="pet-info">
+                      <span>e Thor</span>
+                      <img src="assets/dog.svg" alt="Dog" />
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                </div>
+                <p>O Thor estava muito doente e a equipe da PetCare salvou a vida dele. São profissionais extremamente dedicados e competentes. Sou muito grato!</p>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <img src="assets/quote.svg" alt="Quote" />
+              </div>
+              <div class="testimonial-content">
+                <div class="testimonial-client">
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Mariana Costa" />
+                  <div>
+                    <h4>Mariana Costa</h4>
+                    <div class="pet-info">
+                      <span>e Pipoca</span>
+                      <img src="assets/bird.svg" alt="Bird" />
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                </div>
+                <p>Meu passarinho recebeu um tratamento especializado que não encontrei em outras clínicas. Os veterinários da PetCare são verdadeiros especialistas!</p>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <img src="assets/quote.svg" alt="Quote" />
+              </div>
+              <div class="testimonial-content">
+                <div class="testimonial-client">
+                  <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Rafael Mendes" />
+                  <div>
+                    <h4>Rafael Mendes</h4>
+                    <div class="pet-info">
+                      <span>e Bob</span>
+                      <img src="assets/dog.svg" alt="Dog" />
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-stars">
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                  <img src="assets/star.svg" alt="Star" />
+                </div>
+                <p>Ambiente super acolhedor e profissionais capacitados. Meu cachorro Bob sempre é atendido com muito carinho e atenção. A PetCare é sensacional!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Contact Section -->
+      <section id="contato" class="contact">
+        <div class="container">
+          <h2 class="section-title">Entre em Contato</h2>
+          <p class="section-subtitle">Estamos à disposição para atender você e seu pet da melhor forma possível.</p>
+          
+          <div class="contact-container">
+            <div class="contact-form">
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="name">Nome completo</label>
+                  <input type="text" id="name" name="name" required placeholder="Digite seu nome completo" />
+                </div>
+                
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required placeholder="Digite seu email" />
+                </div>
+                
+                <div class="form-group">
+                  <label for="phone">Telefone</label>
+                  <input type="tel" id="phone" name="phone" required placeholder="(00) 00000-0000" />
+                </div>
+                
+                <div class="form-group">
+                  <label for="subject">Assunto</label>
+                  <select id="subject" name="subject" required>
+                    <option value="" disabled selected>Selecione o assunto</option>
+                    <option value="consulta">Agendar Consulta</option>
+                    <option value="exames">Agendar Exames</option>
+                    <option value="info">Informações</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+                
+                <div class="form-group full-width">
+                  <label for="message">Mensagem</label>
+                  <textarea id="message" name="message" rows="5" required placeholder="Digite sua mensagem"></textarea>
+                </div>
+                
+                <div class="form-group check-group">
+                  <input type="checkbox" id="terms" name="terms" required />
+                  <label for="terms">Concordo com os termos de privacidade</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+              </form>
+            </div>
+            
+            <div class="contact-info">
+              <div class="contact-map">
+                <img src="assets/map.jpg" alt="Mapa da localização" />
+              </div>
+              
+              <div class="contact-details">
+                <div class="contact-item" onclick="handleAction('map')">
+                  <img src="assets/map-pin.svg" alt="Endereço" />
+                  <span>Araçatuba, Senac</span>
+                </div>
+                
+                <div class="contact-item" onclick="handleAction('phone', '1199999999')">
+                  <img src="assets/phone.svg" alt="Telefone" />
+                  <span>(11) 9999-9999</span>
+                </div>
+                
+                <div class="contact-item" onclick="handleAction('email', 'contato@animalslife.com.br')">
+                  <img src="assets/mail.svg" alt="Email" />
+                  <span>contato@animalslife.com.br</span>
+                </div>
+                
+                <div class="contact-item">
+                  <img src="assets/clock.svg" alt="Horário" />
+                  <div class="hours">
+                    <p>Segunda-Sexta: 8h - 20h</p>
+                    <p>Sábado: 8h - 16h</p>
+                    <p>Domingo: Emergência 24h</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="footer-logo">
+              <div class="logo-container">
+                <div class="logo-pet logo-cat">
+                  <img src="assets/cat.svg" alt="Cat icon" />
+                </div>
+                <div class="logo-pet logo-dog">
+                  <img src="assets/dog.svg" alt="Dog icon" />
+                </div>
+              </div>
+              <div class="logo-text">
+                <h3 class="white">Animal's Life</h3>
+                <p class="green">Clínica Veterinária</p>
+              </div>
+            </div>
+            <p>Cuidando com amor e dedicação do seu melhor amigo desde 2010. Nossa missão é proporcionar saúde e bem-estar para todos os pets.</p>
+            <div class="social-links">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="assets/facebook.svg" alt="Facebook" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="assets/instagram.svg" alt="Instagram" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="assets/twitter.svg" alt="Twitter" />
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer-links">
+            <h3>Links Rápidos</h3>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#depoimentos">Depoimentos</a></li>
+              <li><a href="#contato" onclick="handleAction('schedule')">Contato</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-services">
+            <h3>Nossos Serviços</h3>
+            <ul>
+              <li><a href="#" onclick="handleAction('schedule')">Consultas</a></li>
+              <li><a href="#">Cirurgias</a></li>
+              <li><a href="#">Vacinação</a></li>
+              <li><a href="#">Exames</a></li>
+              <li><a href="#">Banho e Tosa</a></li>
+              <li><a href="#">Pet Shop</a></li>
+              <li><a href="#" onclick="handleAction('emergency')">Emergência 24h</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-contact">
+            <h3>Contato</h3>
+            <ul>
+              <li class="contact-item" onclick="handleAction('map')">
+                <img src="assets/map-pin.svg" alt="Endereço" />
+                <span>Araçatuba, Senac</span>
+              </li>
+              <li class="contact-item" onclick="handleAction('phone', '1199999999')">
+                <img src="assets/phone.svg" alt="Telefone" />
+                <span>(11) 9999-9999</span>
+              </li>
+              <li class="contact-item" onclick="handleAction('email', 'contato@animalslife.com.br')">
+                <img src="assets/mail.svg" alt="Email" />
+                <span>contato@animalslife.com.br</span>
+              </li>
+              <li class="contact-item">
+                <img src="assets/clock.svg" alt="Horário" />
+                <div class="hours">
+                  <p>Segunda-Sexta: 8h - 20h</p>
+                  <p>Sábado: 8h - 16h</p>
+                  <p>Domingo: Emergência 24h</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>© 2025 Animal's Life Clínica Veterinária. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
