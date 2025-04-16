@@ -145,6 +145,16 @@ ul {
   color: white;
 }
 
+/* Glassmorphism effect for cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
 /* Section styles */
 .section-title {
   font-size: 2rem;
@@ -367,6 +377,12 @@ ul {
   border-radius: var(--radius);
   padding: var(--spacing-4);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .feature-icon {
@@ -411,6 +427,7 @@ ul {
   object-fit: cover;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: opacity 1s ease-in-out;
 }
 
 .floating-image {
@@ -518,11 +535,25 @@ ul {
   padding: var(--spacing-6);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-img {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  object-fit: cover;
+  margin-bottom: var(--spacing-4);
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.05);
 }
 
 .service-icon {
@@ -618,6 +649,20 @@ ul {
   height: 400px;
   object-fit: cover;
   border-radius: var(--radius);
+  transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.visible {
+  opacity: 1;
 }
 
 .about-badge {
@@ -1102,5 +1147,83 @@ ul {
   100% {
     transform: translateX(100%);
     opacity: 0;
+  }
+}
+
+/* Modal styles for appointment scheduling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: white;
+  border-radius: var(--radius);
+  padding: var(--spacing-6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 95%;
+  max-width: 500px;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal-header {
+  margin-bottom: var(--spacing-4);
+}
+
+.modal-body {
+  margin-bottom: var(--spacing-4);
+}
+
+.appointment-form {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.appointment-form .form-group {
+  margin-bottom: 0;
+}
+
+.appointment-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 640px) {
+  .appointment-form {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
