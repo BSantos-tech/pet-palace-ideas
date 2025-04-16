@@ -1,0 +1,92 @@
+
+<!-- Contact Section -->
+<section id="contato" class="contact">
+  <div class="container">
+    <h2 class="section-title">Entre em Contato</h2>
+    <p class="section-subtitle">Estamos à disposição para atender você e seu pet da melhor forma possível.</p>
+    
+    <div class="contact-container">
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Nome completo</label>
+            <input type="text" id="name" name="name" required placeholder="Digite seu nome completo" />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Digite seu email" />
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(00) 00000-0000" />
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Assunto</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Selecione o assunto</option>
+              <option value="consulta">Agendar Consulta</option>
+              <option value="exames">Agendar Exames</option>
+              <option value="info">Informações</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          
+          <div class="form-group full-width">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Digite sua mensagem"></textarea>
+          </div>
+          
+          <div class="form-group check-group">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">Concordo com os termos de privacidade</label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+        </form>
+      </div>
+      
+      <div class="contact-info">
+        <div class="contact-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.7177767396473!2d-50.43267602356171!3d-21.20734538051714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9495f5ef339c48dd%3A0x9a5cd268ad4d08db!2sSenac%20Ara%C3%A7atuba!5e0!3m2!1spt-BR!2sbr!4v1713962633818!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        
+        <div class="contact-details">
+          <div class="contact-item" onclick="handleAction('map')">
+            <img src="assets/map-pin.svg" alt="Endereço" />
+            <span>Araçatuba, Senac</span>
+          </div>
+          
+          <div class="contact-item" onclick="handleAction('phone', '1199999999')">
+            <img src="assets/phone.svg" alt="Telefone" />
+            <span>(11) 9999-9999</span>
+          </div>
+          
+          <div class="contact-item" onclick="handleAction('email', 'contato@animalslife.com.br')">
+            <img src="assets/mail.svg" alt="Email" />
+            <span>contato@animalslife.com.br</span>
+          </div>
+          
+          <div class="contact-item">
+            <img src="assets/clock.svg" alt="Horário" />
+            <div class="hours">
+              <p>Segunda-Sexta: 8h - 20h</p>
+              <p>Sábado: 8h - 16h</p>
+              <p>Domingo: Emergência 24h</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
